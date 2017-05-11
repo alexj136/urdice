@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import random
+
+def diceroll(): return random.randint(0, 1)
+
+def printroll(roll):
+    print " ".join(map(lambda r: u"\u25B2" if r == 0 else u"\u25B3", roll)), \
+            "   ", sum(roll)
+
+if __name__ == "__main__":
+    print "Welcome to urdice. urdice is a dice rolling tool for the", \
+            "ancient game of Ur. Press enter to roll the dice. Type", \
+            "anything else to quit."
+    while True:
+        s = raw_input()
+        if s != "":
+            break
+        roll = [diceroll(), diceroll(), diceroll(), diceroll()]
+        printroll(roll)
